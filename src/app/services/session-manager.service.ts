@@ -15,8 +15,8 @@ export class SessionManagerService {
 
   signinCall(email, password) {
     let body = new URLSearchParams();
-    body.set("mail",email);
+    body.set("mail", email);
     body.set("pwd", password);
-    return this.http.post(this.signinUrl, body.toString(), {headers: new HttpHeaders().set("Content-type","application/x-www-form-urlencoded")});
+    return this.http.post(this.signinUrl, body.toString(), { headers: new HttpHeaders().set("Content-type", "application/x-www-form-urlencoded") });
   }
 }

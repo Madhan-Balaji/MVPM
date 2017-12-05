@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { SessionManagerService } from '../services/session-manager.service';
+import { UserDetail } from '../models/user-detail';
 
 @Component({
   selector: 'app-signin',
@@ -9,6 +10,7 @@ import { SessionManagerService } from '../services/session-manager.service';
 export class SigninComponent implements OnInit {
   email: string;
   password: any;
+  user: UserDetail;
 
   constructor(private sessionManager: SessionManagerService) { }
 
@@ -16,6 +18,13 @@ export class SigninComponent implements OnInit {
   }
 
   signinSubmit() {
-    this.sessionManager.signinCall(this.email,this.password).subscribe();
+    this.sessionManager.signinCall(this.email, this.password).subscribe(
+      resp => {
+        if (resp['status'] == 'success') {
+          this.user = resp['user'];
+          console.log(this.user);
+        }
+      }
+    );
   }
 }
