@@ -1,0 +1,134 @@
+body{
+	background:#efefef;
+	padding-bottom: 15px;
+	background: url('/assets/images/bg.jpeg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+table{
+	background:#e2e2e2;
+}
+
+.set-middle{
+	height: auto;
+    margin: 0 auto;
+    position: relative;
+}
+.login-box{
+	width: 25%;
+	background:white;
+	border-radius: 10px;
+	padding: 10px;
+	border: 1px solid black;
+}
+.link-text{
+	text-decoration:none;
+	color: #6ab8fc;
+}
+
+.form-text-box{
+	margin:10px 0;
+}
+
+.header{
+	padding:15px;
+	margin-bottom: 20px;
+	background: rgba(0,0,0,0.5);
+	color:white;
+}
+.options-first{
+	border-right: 1px solid black;
+	display:inline-block;
+	padding: 10px 25px;
+}
+.options-end{
+	display:inline-block;
+	padding: 10px 25px;
+}
+.user-options{
+	text-align:center;
+}
+.option-icon{
+	font-size: 400%;
+	text-decoration: none;
+	cursor:pointer;
+}
+.user-note{
+	top: 0;
+    right: 0;
+    position: absolute;
+    float: right;
+}
+.car-data-edit{
+	width: 50%;
+	background:white;
+	border-radius: 10px;
+	padding: 10px;
+	border: 1px solid black;
+}
+.form-box{
+	margin: 10px 0;
+}
+
+.dropbtn {
+    padding: 16px;
+    font-size: 16px;
+    border: 1px solid white;
+    border-radius: 10px;
+    color: white;
+    cursor: pointer;
+    background:rgba(0,0,0,0);
+        
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+    float:right;
+    margin:10px;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {background-color: #f1f1f1}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover .dropbtn {
+    background-color: #3e8e41;
+}
+.filter-region{
+	border-right: 1px solid black;
+}
+.filter-ops{
+	padding: 10px;
+	background: white;
+	border: 1px solid #ccc;
+	border-radius: 10px;
+	margin: 10px 0;
+}
+.comparer{
+	position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: rgba(81,81,81,0.5);
+    padding:10px;
+}
