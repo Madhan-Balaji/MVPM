@@ -4,10 +4,10 @@
     <input required type="text" class="form-control form-text-box" [(ngModel)]="newUser.name" name="name" placeholder="Name">
     <input required type="email" class="form-control form-text-box" [(ngModel)]="newUser.email" name="email" placeholder="E-mail">
     <input required type="text" class="form-control form-text-box" [(ngModel)]="newUser.phone" name="phone" placeholder="Phone">
-    <input required type="password" class="form-control form-text-box" [(ngModel)]="newUser.pwd" name="password" placeholder="Password">
+    <input required type="password" class="form-control form-text-box" [(ngModel)]="newUser.password" name="password" placeholder="Password">
     <input required type="password" class="form-control form-text-box" [(ngModel)]="rpwd" name="repeat-password" placeholder="Re-Enter Password">
-    <p ng-if="pwd != rpwd">Password Mismatch!</p>
-    <select [(ngModel)]="newUser.region" name="region" class="form-control form-text-box">
+    <p *ngIf="newUser.password != rpwd">Password Mismatch!</p>
+    <select [(ngModel)]="newUser.region" name="region" class="form-control form-text-box" placeholder="region">
         <option value="">--Select a Region--</option>
         <option value="chennai">Chennai</option>
         <option value="madurai">Madurai</option>

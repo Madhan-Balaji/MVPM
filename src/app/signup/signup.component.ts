@@ -8,8 +8,8 @@ import { SessionManagerService } from '../services/session-manager.service';
   styleUrls: ['./signup.component.css']
 })
 export class SignupComponent implements OnInit {
-  newUser: UserDetail;
-  rpwd: any;
+  newUser: UserDetail = {};
+
   constructor(private sessionManager: SessionManagerService) { }
 
   ngOnInit() {
