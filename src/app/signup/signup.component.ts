@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import { UserDetail } from '../models/user-detail';
 import { SessionManagerService } from '../services/session-manager.service';
+import { DataBridgeService } from '../services/data-bridge.service';
 @Component({
   selector: 'app-signup',
   templateUrl: './signup.component.html',
@@ -10,14 +11,23 @@ import { SessionManagerService } from '../services/session-manager.service';
 export class SignupComponent implements OnInit {
   newUser: UserDetail = {};
 
-  constructor(private sessionManager: SessionManagerService) { }
+  constructor(
+    private sessionManager: SessionManagerService,
+    private dataBridge: DataBridgeService
+  ) { }
 
   ngOnInit() {
   }
 
   signupSubmit() {
     this.sessionManager.signupCall(this.newUser).subscribe(
-      response => console.log(response)
+      response => {
+        if (response['status'] === 'success') {
+          this.dataBridge.setAppUser(response['user']);
+        } else {
+          alert('Problem with Sign Up, Please try later');
+        }
+      }
     );
   }
 

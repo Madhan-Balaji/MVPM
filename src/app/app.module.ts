@@ -9,6 +9,7 @@ import { SigninComponent } from './signin/signin.component';
 import { RoutingModule } from './/routing.module';
 import { SignupComponent } from './signup/signup.component';
 import { SessionManagerService } from './services/session-manager.service';
+import { DataBridgeService } from './services/data-bridge.service';
 
 
 
@@ -24,7 +25,7 @@ import { SessionManagerService } from './services/session-manager.service';
     FormsModule,
     HttpClientModule
   ],
-  providers: [SessionManagerService],
+  providers: [SessionManagerService, DataBridgeService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
