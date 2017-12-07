@@ -10,6 +10,7 @@ import { RoutingModule } from './/routing.module';
 import { SignupComponent } from './signup/signup.component';
 import { SessionManagerService } from './services/session-manager.service';
 import { DataBridgeService } from './services/data-bridge.service';
+import { UserDashboardComponent } from './user-dashboard/user-dashboard.component';
 
 
 
@@ -17,7 +18,8 @@ import { DataBridgeService } from './services/data-bridge.service';
   declarations: [
     AppComponent,
     SigninComponent,
-    SignupComponent
+    SignupComponent,
+    UserDashboardComponent
   ],
   imports: [
     BrowserModule,
