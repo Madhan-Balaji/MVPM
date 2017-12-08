@@ -21,6 +21,8 @@ import { CarService } from './services/car.service';
 import { SellNewCarComponent } from './sell-new-car/sell-new-car.component';
 import { WriteNewsComponent } from './write-news/write-news.component';
 import { WriteLoanComponent } from './write-loan/write-loan.component';
+import { LoanService } from './services/loan.service';
+import { UserCarsComponent } from './user-cars/user-cars.component';
 
 
 
@@ -36,7 +38,8 @@ import { WriteLoanComponent } from './write-loan/write-loan.component';
     SellUsedCarComponent,
     SellNewCarComponent,
     WriteNewsComponent,
-    WriteLoanComponent
+    WriteLoanComponent,
+    UserCarsComponent
   ],
   imports: [
     BrowserModule,
@@ -44,7 +47,7 @@ import { WriteLoanComponent } from './write-loan/write-loan.component';
     FormsModule,
     HttpClientModule
   ],
-  providers: [SessionManagerService, DataBridgeService, NewsService, InsuranceService, CarService],
+  providers: [SessionManagerService, DataBridgeService, NewsService, InsuranceService, CarService, LoanService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,3 +1,52 @@
-<p>
-  write-loan works!
-</p>
+<div class="set-middle login-box">
+	<form #NewLoanForm="ngForm" (ngSubmit)="NewLoanSubmit()" >
+		<select required class="form-control form-box" name="brand" [(ngModel)]="newLoan.brand">
+			<option value="" disabled>--Select a Brand--</option>
+			<option value="honda">Honda</option>
+			<option value="maruti suzuki">Maruti Suzuki</option>
+			<option value="hundai">Hundai</option>
+			<option value="toyota">Toyota</option>
+			<option value="benz">Benz</option>
+			<option value="bmw">BMW</option>
+			<option value="ford">Ford</option>
+			<option value="volkswagen">Volkswagen</option>
+			<option value="volvo">Volvo</option>
+		</select>
+		<input type="text" [(ngModel)]="newLoan.bank" class="form-control form-box" name="name" placeholder="Bank Name">
+		<input type="text" [(ngModel)]="newLoan.iFrom" class="form-control form-box" name="inint" placeholder="Interest From %">
+		<input type="text" [(ngModel)]="newLoan.iTo" class="form-control form-box" name="toint" placeholder="Interest To %">
+		<input type="text" [(ngModel)]="newLoan.fee" class="form-control form-box" name="processfee" placeholder="Processing Fee">
+		<input type="text" [(ngModel)]="newLoan.amt" class="form-control form-box" name="minamt" placeholder="Minimum Loan Amount">
+		<input type="text" [(ngModel)]="newLoan.time" class="form-control form-box" name="tenure" placeholder="Tenure Range (eg 1-7 years)">
+		<button type="submit" class="btn btn-success">Submit</button>
+	</form>
+</div>
+<h3 align="center">Available Loans</h3>
+<div class="container">
+	<div class="row">
+		<div class="col-sm-2"></div>
+		<div class="col-sm-8">
+			<table class="table table-striped table-responsive">
+				<tr>
+					<th>For Brand</th>
+					<th>Bank</th>
+					<th>Interest</th>
+					<th>Processing Fee</th>
+					<th>Loan Amount</th>
+					<th>Tenure period</th>
+					<th>Actions</th>
+				</tr>
+				<tr *ngFor="let loan of loanControl">
+				<td>{{loan.brand}}</td>
+				<td>{{loan.bank}}</td>
+				<td>{{loan.iFrom}} - {{loan.iTo}} %</td>
+				<td>{{loan.fee}}</td>
+				<td>Rs. {{loan.amt}}</td>
+				<td>{{loan.time}}</td>
+				<td><i (click)="removeLoan(loan.id)" style="color:red;" class="glyphicon glyphicon-remove-circle"></i></td>
+			</tr>
+			</table>
+		</div>
+		<div class="col-sm-2"></div>
+	</div>
+</div>
