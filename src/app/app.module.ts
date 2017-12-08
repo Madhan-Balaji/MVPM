@@ -16,6 +16,8 @@ import { InsuranceDashboardComponent } from './insurance-dashboard/insurance-das
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { NewsService } from './services/news.service';
 import { InsuranceService } from './services/insurance.service';
+import { SellUsedCarComponent } from './sell-used-car/sell-used-car.component';
+import { CarService } from './services/car.service';
 
 
 
@@ -27,7 +29,8 @@ import { InsuranceService } from './services/insurance.service';
     UserDashboardComponent,
     AdminDashboardComponent,
     InsuranceDashboardComponent,
-    DashboardComponent
+    DashboardComponent,
+    SellUsedCarComponent
   ],
   imports: [
     BrowserModule,
@@ -35,7 +38,7 @@ import { InsuranceService } from './services/insurance.service';
     FormsModule,
     HttpClientModule
   ],
-  providers: [SessionManagerService, DataBridgeService, NewsService, InsuranceService],
+  providers: [SessionManagerService, DataBridgeService, NewsService, InsuranceService, CarService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
