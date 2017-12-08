@@ -24,6 +24,7 @@ export class SignupComponent implements OnInit {
       response => {
         if (response['status'] === 'success') {
           this.dataBridge.setAppUser(response['user']);
+          this.sessionManager.checkRole();
         } else {
           alert('Problem with Sign Up, Please try later');
         }

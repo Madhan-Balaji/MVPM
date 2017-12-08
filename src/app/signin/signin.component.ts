@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { SessionManagerService } from '../services/session-manager.service';
 import { UserDetail } from '../models/user-detail';
 import { DataBridgeService } from '../services/data-bridge.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-signin',
@@ -15,7 +16,8 @@ export class SigninComponent implements OnInit {
 
   constructor(
     private sessionManager: SessionManagerService,
-    private dataBridge: DataBridgeService
+    private dataBridge: DataBridgeService,
+    private router: Router
   ) { }
 
   ngOnInit() {
@@ -26,6 +28,7 @@ export class SigninComponent implements OnInit {
       response => {
         if (response['status'] === 'success') {
           this.dataBridge.setAppUser(response['user']);
+          this.sessionManager.checkRole();
         }
       }
     );

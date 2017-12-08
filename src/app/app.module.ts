@@ -13,6 +13,9 @@ import { DataBridgeService } from './services/data-bridge.service';
 import { UserDashboardComponent } from './user-dashboard/user-dashboard.component';
 import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
 import { InsuranceDashboardComponent } from './insurance-dashboard/insurance-dashboard.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { NewsService } from './services/news.service';
+import { InsuranceService } from './services/insurance.service';
 
 
 
@@ -23,7 +26,8 @@ import { InsuranceDashboardComponent } from './insurance-dashboard/insurance-das
     SignupComponent,
     UserDashboardComponent,
     AdminDashboardComponent,
-    InsuranceDashboardComponent
+    InsuranceDashboardComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
@@ -31,7 +35,7 @@ import { InsuranceDashboardComponent } from './insurance-dashboard/insurance-das
     FormsModule,
     HttpClientModule
   ],
-  providers: [SessionManagerService, DataBridgeService],
+  providers: [SessionManagerService, DataBridgeService, NewsService, InsuranceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
