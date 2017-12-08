@@ -28,9 +28,9 @@ export class SellNewCarComponent implements OnInit {
   ngOnInit() {
   }
 
-  sellnewCarSubmit() {
+  sellNewCarSubmit() {
     const files = $('#myFile').prop('files');
-    const video = $('videoFile').prop('files');
+    const video = $('#videoFile').prop('files');
     this.carService.sellNewCarCall(this.newCar, files[0], video[0]).subscribe(
       response => {
         if (response['status'] === 'success') {
