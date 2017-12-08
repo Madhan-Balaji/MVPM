@@ -7,8 +7,8 @@
     <input required type="password" class="form-control form-text-box" [(ngModel)]="newUser.password" name="password" placeholder="Password">
     <input required type="password" class="form-control form-text-box" [(ngModel)]="rpwd" name="repeat-password" placeholder="Re-Enter Password">
     <p *ngIf="newUser.password != rpwd">Password Mismatch!</p>
-    <select [(ngModel)]="newUser.region" name="region" class="form-control form-text-box" placeholder="region">
-        <option value="">--Select a Region--</option>
+    <select [(ngModel)]="newUser.region" name="region" class="form-control form-text-box">
+        <option value="" disabled>--Select a Region--</option>
         <option value="chennai">Chennai</option>
         <option value="madurai">Madurai</option>
         <option value="mumbai">Mumbai</option>

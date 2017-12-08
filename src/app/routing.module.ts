@@ -7,6 +7,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { UserDashboardComponent } from './user-dashboard/user-dashboard.component';
 import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
 import { InsuranceDashboardComponent } from './insurance-dashboard/insurance-dashboard.component';
+import { SellUsedCarComponent } from './sell-used-car/sell-used-car.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/signin', pathMatch: 'full' },
@@ -17,7 +18,8 @@ const routes: Routes = [
       { path: '', redirectTo: '/dashboard/user', pathMatch: 'full' },
       { path: 'user', component: UserDashboardComponent },
       { path: 'admin', component: AdminDashboardComponent },
-      { path: 'insurance', component: InsuranceDashboardComponent }
+      { path: 'insurance', component: InsuranceDashboardComponent },
+      { path: 'sell-used-car', component: SellUsedCarComponent }
     ]
   }
 ];

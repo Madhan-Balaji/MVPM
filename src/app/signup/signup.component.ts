@@ -14,7 +14,9 @@ export class SignupComponent implements OnInit {
   constructor(
     private sessionManager: SessionManagerService,
     private dataBridge: DataBridgeService
-  ) { }
+  ) {
+    this.newUser.region = '';
+  }
 
   ngOnInit() {
   }
