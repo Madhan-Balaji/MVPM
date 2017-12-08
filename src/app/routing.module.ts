@@ -9,6 +9,7 @@ import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.compo
 import { InsuranceDashboardComponent } from './insurance-dashboard/insurance-dashboard.component';
 import { SellUsedCarComponent } from './sell-used-car/sell-used-car.component';
 import { SellNewCarComponent } from './sell-new-car/sell-new-car.component';
+import { WriteNewsComponent } from './write-news/write-news.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/signin', pathMatch: 'full' },
@@ -21,7 +22,8 @@ const routes: Routes = [
       { path: 'admin', component: AdminDashboardComponent },
       { path: 'insurance', component: InsuranceDashboardComponent },
       { path: 'sell-used-car', component: SellUsedCarComponent },
-      { path: 'sell-new-car', component: SellNewCarComponent }
+      { path: 'sell-new-car', component: SellNewCarComponent },
+      { path: 'news-control', component: WriteNewsComponent }
     ]
   }
 ];

@@ -1,0 +1,34 @@
+<div class="set-middle car-data-edit">
+  <h2 align="center">Enter the following details</h2>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-sm-12">
+        <form #NewsForm="ngForm" (ngSubmit)="newsFormSubmit()">
+          <input type="text" name="heading" class="form-control form-box" [(ngModel)]="newNews.heading" placeholder="Heading">
+          <textarea name="content" class="form-control form-box" [(ngModel)]="newNews.content" style="width:100%; height:400px;" placeholder="Content"></textarea>
+          Upload a photo: <input type="file" id="myFile" class="form-control form-box" />
+          <button class="btn btn-success form-box">Publish</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<h3 align="center">Available News/Offers</h3>
+<div class="container">
+<div class="row">
+  <div class="col-sm-3"></div>
+  <div class="col-sm-6">
+    <table class="table table-striped table-responsive">
+      <tr>
+        <th>News</th>
+        <th>Action</th>
+      </tr>
+      <tr *ngFor="let news of newsControl">
+        <td>{{news.heading}}</td>
+        <td><i (click)="removeNews(news.id)" style="color:red;" class="glyphicon glyphicon-remove-circle"></i></td>
+      </tr>
+    </table>
+  </div>
+  <div class="col-sm-3"></div>
+</div>
+</div>

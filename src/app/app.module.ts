@@ -19,6 +19,8 @@ import { InsuranceService } from './services/insurance.service';
 import { SellUsedCarComponent } from './sell-used-car/sell-used-car.component';
 import { CarService } from './services/car.service';
 import { SellNewCarComponent } from './sell-new-car/sell-new-car.component';
+import { WriteNewsComponent } from './write-news/write-news.component';
+import { WriteLoanComponent } from './write-loan/write-loan.component';
 
 
 
@@ -32,7 +34,9 @@ import { SellNewCarComponent } from './sell-new-car/sell-new-car.component';
     InsuranceDashboardComponent,
     DashboardComponent,
     SellUsedCarComponent,
-    SellNewCarComponent
+    SellNewCarComponent,
+    WriteNewsComponent,
+    WriteLoanComponent
   ],
   imports: [
     BrowserModule,
