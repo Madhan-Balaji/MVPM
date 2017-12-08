@@ -11,6 +11,8 @@ import { SignupComponent } from './signup/signup.component';
 import { SessionManagerService } from './services/session-manager.service';
 import { DataBridgeService } from './services/data-bridge.service';
 import { UserDashboardComponent } from './user-dashboard/user-dashboard.component';
+import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
+import { InsuranceDashboardComponent } from './insurance-dashboard/insurance-dashboard.component';
 
 
 
@@ -19,7 +21,9 @@ import { UserDashboardComponent } from './user-dashboard/user-dashboard.componen
     AppComponent,
     SigninComponent,
     SignupComponent,
-    UserDashboardComponent
+    UserDashboardComponent,
+    AdminDashboardComponent,
+    InsuranceDashboardComponent
   ],
   imports: [
     BrowserModule,
