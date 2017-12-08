@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { CarDetail } from '../models/car-detail';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { DataBridgeService } from './data-bridge.service';
 
 @Injectable()
 export class CarService {
@@ -9,7 +10,12 @@ export class CarService {
 
   private sellUsedCar = this.serviceSpecificUrl + 'newUsedCar';
   private sellNewCar = this.serviceSpecificUrl + 'newCar';
-  constructor(private http: HttpClient) { }
+  private userCars = this.serviceSpecificUrl + 'getMyCars';
+  private removeCar = this.serviceSpecificUrl + 'removeCar';
+  constructor(
+    private http: HttpClient,
+    private dataBridge: DataBridgeService
+  ) { }
 
   sellUsedCarCall(usedCar: CarDetail, file) {
     const fd = new FormData();
@@ -52,5 +58,24 @@ export class CarService {
     fd.append('video', video);
     fd.append('user', newCar.user);
     return this.http.post(this.sellNewCar, fd);
+  }
+
+  userCarsCall() {
+    const body = new URLSearchParams();
+    body.set('id', this.dataBridge.getAppUser().id);
+    const options = {
+      headers: new HttpHeaders().set('Content-type', 'application/x-www-form-urlencoded')
+    };
+
+    return this.http.post(this.userCars, body.toString(), options);
+  }
+
+  removeCarCall(id) {
+    const options = {
+      headers: new HttpHeaders().set('Content-type', 'application/x-www-form-urlencoded')
+    };
+    const body = new URLSearchParams();
+    body.set('id', id);
+    return this.http.post(this.removeCar, body.toString(), options);
   }
 }
