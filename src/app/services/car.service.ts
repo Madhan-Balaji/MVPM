@@ -8,6 +8,7 @@ export class CarService {
   private serviceSpecificUrl = this.baseUrl + 'cars/';
 
   private sellUsedCar = this.serviceSpecificUrl + 'newUsedCar';
+  private sellNewCar = this.serviceSpecificUrl + 'newCar';
   constructor(private http: HttpClient) { }
 
   sellUsedCarCall(usedCar: CarDetail, file) {
@@ -27,6 +28,29 @@ export class CarService {
     fd.append('cc', usedCar.cc);
     fd.append('address', usedCar.address);
     fd.append('file', file);
-    return this.http.post(this.sellUsedCar, fd/*, { headers: new HttpHeaders().set('Content-type', 'multipart/form-data') }*/);
+    fd.append('user', usedCar.user);
+    return this.http.post(this.sellUsedCar, fd);
+  }
+
+  sellNewCarCall(newCar: CarDetail, file, video) {
+    const fd = new FormData();
+    fd.append('price', newCar.price);
+    fd.append('brand', newCar.brand);
+    fd.append('type', newCar.type);
+    fd.append('name', newCar.name);
+    fd.append('model', newCar.model);
+    fd.append('year', newCar.year);
+    fd.append('gear', newCar.gear);
+    fd.append('seat', newCar.seat);
+    fd.append('color', newCar.color);
+    fd.append('owner', newCar.owner);
+    fd.append('fuelType', newCar.fuel);
+    fd.append('milage', newCar.milage);
+    fd.append('cc', newCar.cc);
+    fd.append('address', newCar.address);
+    fd.append('file', file);
+    fd.append('video', video);
+    fd.append('user', newCar.user);
+    return this.http.post(this.sellNewCar, fd);
   }
 }
