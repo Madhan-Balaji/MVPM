@@ -23,6 +23,7 @@ import { WriteNewsComponent } from './write-news/write-news.component';
 import { WriteLoanComponent } from './write-loan/write-loan.component';
 import { LoanService } from './services/loan.service';
 import { UserCarsComponent } from './user-cars/user-cars.component';
+import { WriteInsuranceComponent } from './write-insurance/write-insurance.component';
 
 
 
@@ -39,7 +40,8 @@ import { UserCarsComponent } from './user-cars/user-cars.component';
     SellNewCarComponent,
     WriteNewsComponent,
     WriteLoanComponent,
-    UserCarsComponent
+    UserCarsComponent,
+    WriteInsuranceComponent
   ],
   imports: [
     BrowserModule,
