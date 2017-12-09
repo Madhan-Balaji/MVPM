@@ -1,0 +1,46 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-3 filter-region">
+      <input type="text" id="search-box" (ngModelChange)="searchTheTerm()" name="searchTerm" [(ngModel)]="searchTerm" placeholder="Search" class="form-control form-box">
+      <div class="filter-ops">
+        <h4>Select Usage</h4>
+        <input type="checkbox" (change)="used = !used; updateFilter();" name="used" > Used
+        <br>
+        <input (change)="newv = !newv; updateFilter();" type="checkbox" name="newv" > New
+        <br>
+      </div>
+
+      <div class="filter-ops">
+        <h4>Select Fuel Type</h4>
+        <input (change)="petrol = !petrol; updateFilter();" type="checkbox" name="petrol" > Petrol
+        <br>
+        <input (change)="diesel = !diesel; updateFilter();" type="checkbox" name="diesel" > Disel
+        <br>
+        <input (change)="electric = !electric; updateFilter();" type="checkbox" name="electric" > Electric
+        <br>
+        <input (change)="cng = !cng; updateFilter();" type="checkbox" name="cng" > CNG
+        <br>
+      </div>
+
+    </div>
+    <div class="col-sm-9">
+      <div class="col-sm-12" id="search-area" style="padding-top: 10px;">
+        <div style="display:inline-block;width:25%;height:25%;margin:20px;" *ngFor="let car of cars">
+          <div class="thumbnail">
+
+            <img style="cursor:pointer;" (click)="selectCar(car.id)" src={{car.imageUrl}} alt="Nature" style="width:100%">
+            <div class="caption">
+              <h3 style="cursor:pointer;" (click)="selectCar(car.id)">{{initcap(car.brand)}} {{initcap(car.name)}}</h3>
+
+              <p>{{car.year}}</p>
+              <h5 style="text-align: right;">
+                <span (click)="setCompare(car.id,initcap(car.brand)+' '+initcap(car.name))" style="background-color: #afffd7; cursor:pointer;">Compare</span>
+                <span style="background: #eaeaea;">{{car.price}}</span>
+              </h5>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

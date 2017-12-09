@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { CarDetail } from '../models/car-detail';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { DataBridgeService } from './data-bridge.service';
 
 @Injectable()
@@ -12,6 +12,8 @@ export class CarService {
   private sellNewCar = this.serviceSpecificUrl + 'newCar';
   private userCars = this.serviceSpecificUrl + 'getMyCars';
   private removeCar = this.serviceSpecificUrl + 'removeCar';
+  private getAllCars = this.serviceSpecificUrl + 'getAllCars';
+  private carSearch = this.serviceSpecificUrl + 'searchByTerm';
   constructor(
     private http: HttpClient,
     private dataBridge: DataBridgeService
@@ -78,4 +80,13 @@ export class CarService {
     body.set('id', id);
     return this.http.post(this.removeCar, body.toString(), options);
   }
+
+  getAllCarsCall() {
+    return this.http.get(this.getAllCars);
+  }
+
+  searchCarCall(term) {
+    return this.http.get(this.carSearch, { params: new HttpParams().set('term', term) });
+  }
+
 }
