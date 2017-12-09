@@ -201,4 +201,9 @@ export class SearchComponent implements OnInit {
       }
     );
   }
+
+  selectCar(car: CarDetail) {
+    this.dataBridge.viewCarDetails(car);
+  }
+
 }

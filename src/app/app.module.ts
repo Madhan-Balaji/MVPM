@@ -25,6 +25,7 @@ import { LoanService } from './services/loan.service';
 import { UserCarsComponent } from './user-cars/user-cars.component';
 import { WriteInsuranceComponent } from './write-insurance/write-insurance.component';
 import { SearchComponent } from './search/search.component';
+import { CarDisplayComponent } from './car-display/car-display.component';
 
 
 
@@ -43,7 +44,8 @@ import { SearchComponent } from './search/search.component';
     WriteLoanComponent,
     UserCarsComponent,
     WriteInsuranceComponent,
-    SearchComponent
+    SearchComponent,
+    CarDisplayComponent
   ],
   imports: [
     BrowserModule,

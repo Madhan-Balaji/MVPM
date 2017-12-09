@@ -14,6 +14,7 @@ import { WriteLoanComponent } from './write-loan/write-loan.component';
 import { UserCarsComponent } from './user-cars/user-cars.component';
 import { WriteInsuranceComponent } from './write-insurance/write-insurance.component';
 import { SearchComponent } from './search/search.component';
+import { CarDisplayComponent } from './car-display/car-display.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/signin', pathMatch: 'full' },
@@ -31,7 +32,8 @@ const routes: Routes = [
       { path: 'loan-control', component: WriteLoanComponent },
       { path: 'your-cars', component: UserCarsComponent },
       { path: 'sell-insurance', component: WriteInsuranceComponent },
-      { path: 'search', component: SearchComponent }
+      { path: 'search', component: SearchComponent },
+      { path: 'car-details', component: CarDisplayComponent}
     ]
   }
 ];

@@ -14,6 +14,8 @@ export class CarService {
   private removeCar = this.serviceSpecificUrl + 'removeCar';
   private getAllCars = this.serviceSpecificUrl + 'getAllCars';
   private carSearch = this.serviceSpecificUrl + 'searchByTerm';
+  private getReviews = this.serviceSpecificUrl + 'getReview';
+  private userReview = this.serviceSpecificUrl + 'addReview';
   constructor(
     private http: HttpClient,
     private dataBridge: DataBridgeService
@@ -87,6 +89,27 @@ export class CarService {
 
   searchCarCall(term) {
     return this.http.get(this.carSearch, { params: new HttpParams().set('term', term) });
+  }
+
+  getReviewsCall(id) {
+    const body = new URLSearchParams();
+    body.set('carId', id);
+    const options = {
+      headers: new HttpHeaders().set('Content-type', 'application/x-www-form-urlencoded')
+    };
+    return this.http.post(this.getReviews, body.toString(), options);
+  }
+
+  userReviewCall(car, review, rating) {
+    const body = new URLSearchParams();
+    body.append('carId', car);
+    body.append('review', review);
+    body.append('rating', rating);
+    body.append('userId', this.dataBridge.getAppUser().id);
+    const options = {
+      headers: new HttpHeaders().set('Content-type', 'application/x-www-form-urlencoded')
+    };
+    return this.http.post(this.userReview, body.toString(), options);
   }
 
 }

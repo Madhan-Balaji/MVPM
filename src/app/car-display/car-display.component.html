@@ -1,0 +1,123 @@
+<div class="container">
+  <div class="row" style="margin-bottom: 25px;">
+    <div class="col-sm-12">
+      <img style="margin:auto; max-height:500px; max-width:600px;" src={{data.imageUrl}}>
+    </div>
+    <div class="row">
+      <div class="col-sm-3"></div>
+      <div class="col-sm-6">
+        <div class="col-sm-12 table-responsive">
+
+          <table style="background: #e2e2e2;" class="table table-responsive table-striped table-bordered">
+            <tr>
+              <td style="text-align:center">Brand</td>
+              <td style="text-align:center">{{initcap(data.brand)}}</td>
+            </tr>
+            <tr>
+              <td style="text-align:center">Name</td>
+              <td style="text-align:center">{{initcap(data.name)}}</td>
+            </tr>
+            <tr>
+              <td style="text-align:center">Model</td>
+              <td style="text-align:center">{{initcap(data.model)}}</td>
+            </tr>
+            <tr>
+              <td style="text-align:center">Year</td>
+              <td style="text-align:center">{{initcap(data.year)}}</td>
+            </tr>
+            <tr>
+              <td style="text-align:center">Gear</td>
+              <td style="text-align:center">{{initcap(data.gear)}}</td>
+            </tr>
+            <tr>
+              <td style="text-align:center">Seats</td>
+              <td style="text-align:center">{{initcap(data.seat)}}</td>
+            </tr>
+            <tr>
+              <td style="text-align:center">Car Type</td>
+              <td style="text-align:center">{{initcap(data.type)}}</td>
+            </tr>
+            <tr>
+              <td style="text-align:center">Color</td>
+              <td style="text-align:center">{{initcap(data.color)}}</td>
+            </tr>
+            <tr>
+              <td style="text-align:center">Owner Type</td>
+              <td style="text-align:center">{{initcap(data.owner)}}</td>
+            </tr>
+            <tr>
+              <td style="text-align:center">Fuel</td>
+              <td style="text-align:center">{{initcap(data.fuel)}}</td>
+            </tr>
+            <tr>
+              <td style="text-align:center">Milage</td>
+              <td style="text-align:center">{{initcap(data.milage)}}</td>
+            </tr>
+            <tr>
+              <td style="text-align:center">Engine CC</td>
+              <td style="text-align:center">{{initcap(data.cc)}}</td>
+            </tr>
+            <tr>
+              <td style="text-align:center">Price</td>
+              <td style="text-align:center">{{initcap(data.price)}}</td>
+            </tr>
+            <tr>
+              <td style="text-align:center">Address</td>
+              <td style="text-align:center">{{data.address}}</td>
+            </tr>
+
+          </table>
+
+          <a (click)="seeLoans(data)">Check For Loans ></a>
+
+        </div>
+      </div>
+      <div class="col-sm-3"></div>
+    </div>
+    <div class="row">
+      <div class="col-sm-4"></div>
+      <div class="col-sm-4">
+        <video *ngIf="data.usage == 'new'" controls="" autoplay="" style="margin:auto; max-height:500px; max-width:600px;" name="media">
+          <source src={{data.video}} type="video/mp4">
+        </video>
+      </div>
+      <div class="col-sm-4"></div>
+    </div>
+    <div *ngIf="data.usage == 'new'" class="row">
+      <div class="col-sm-3"></div>
+      <div style="background:white;padding: 10px;" class="col-sm-6">
+        <form #UserReviewForm="ngForm" (ngSubmit)="reviewSubmit()">
+          <div *ngIf="review.userReviewed == 'no'">
+            <h4>Please Make a Review</h4>
+            <p style="display:inline-block">Rate: </p>
+            <select name="rating" [(ngModel)]="userReview.rating">
+              <option value="">--Select Rating--</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+            </select>
+            <p>Comment:</p>
+            <textarea name="review" style="width:100%; height:100px;" [(ngModel)]="userReview.review"></textarea>
+            <button class="btn btn-success" type="submit" >Submit</button>
+          </div>
+        </form>
+        <div *ngIf="review.notYet == 'no'">
+          <div *ngFor="let reviews of review.userReview">
+            <div style="background:#dddddd;">
+              <span style="font-weight:bold; margin: 5px 0;">{{reviews.userName}}</span>
+              <span style="color:#ff5b5b;">
+                <i class="glyphicon glyphicon-star"></i> {{reviews.rating}}</span>
+              <p>{{reviews.review}}</p>
+            </div>
+          </div>
+        </div>
+        <div *ngIf="review.notYet == 'yes'">
+          <p>{{review.notYetMessage}}</p>
+        </div>
+      </div>
+      <div class="col-sm-3"></div>
+    </div>
+  </div>
+</div>
