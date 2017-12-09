@@ -26,6 +26,9 @@ import { UserCarsComponent } from './user-cars/user-cars.component';
 import { WriteInsuranceComponent } from './write-insurance/write-insurance.component';
 import { SearchComponent } from './search/search.component';
 import { CarDisplayComponent } from './car-display/car-display.component';
+import { LoanDetailsComponent } from './loan-details/loan-details.component';
+import { NewsDisplayComponent } from './news-display/news-display.component';
+import { InsuranceDisplayComponent } from './insurance-display/insurance-display.component';
 
 
 
@@ -45,7 +48,10 @@ import { CarDisplayComponent } from './car-display/car-display.component';
     UserCarsComponent,
     WriteInsuranceComponent,
     SearchComponent,
-    CarDisplayComponent
+    CarDisplayComponent,
+    LoanDetailsComponent,
+    NewsDisplayComponent,
+    InsuranceDisplayComponent
   ],
   imports: [
     BrowserModule,

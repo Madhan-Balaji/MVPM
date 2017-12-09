@@ -3,6 +3,7 @@ import { NewsService } from '../services/news.service';
 import { NewsDetail } from '../models/news-detail';
 import { InsuranceService } from '../services/insurance.service';
 import { InsuranceDetail } from '../models/insurance-detail';
+import { DataBridgeService } from '../services/data-bridge.service';
 
 @Component({
   selector: 'app-user-dashboard',
@@ -14,7 +15,8 @@ export class UserDashboardComponent implements OnInit {
   private insurances: InsuranceDetail[];
   constructor(
     private newsService: NewsService,
-    private insuranceService: InsuranceService
+    private insuranceService: InsuranceService,
+    private dataBridge: DataBridgeService
   ) { }
 
   ngOnInit() {
@@ -26,7 +28,7 @@ export class UserDashboardComponent implements OnInit {
     this.newsService.dailyNewsCall().subscribe(
       response => {
         if (response['status'] === 'success') {
-          this.dailyNews =  response['news'];
+          this.dailyNews = response['news'];
         } else {
           alert('Failed to load News/Offers');
         }
@@ -44,6 +46,14 @@ export class UserDashboardComponent implements OnInit {
         }
       }
     );
+  }
+
+  showNews(news) {
+    this.dataBridge.viewNews(news);
+  }
+
+  showInsurance(insurance) {
+    this.dataBridge.viewInsurance(insurance);
   }
 
 }

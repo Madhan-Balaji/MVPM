@@ -15,6 +15,9 @@ import { UserCarsComponent } from './user-cars/user-cars.component';
 import { WriteInsuranceComponent } from './write-insurance/write-insurance.component';
 import { SearchComponent } from './search/search.component';
 import { CarDisplayComponent } from './car-display/car-display.component';
+import { LoanDetailsComponent } from './loan-details/loan-details.component';
+import { NewsDisplayComponent } from './news-display/news-display.component';
+import { InsuranceDisplayComponent } from './insurance-display/insurance-display.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/signin', pathMatch: 'full' },
@@ -33,7 +36,10 @@ const routes: Routes = [
       { path: 'your-cars', component: UserCarsComponent },
       { path: 'sell-insurance', component: WriteInsuranceComponent },
       { path: 'search', component: SearchComponent },
-      { path: 'car-details', component: CarDisplayComponent}
+      { path: 'car-details', component: CarDisplayComponent},
+      { path: 'loans', component: LoanDetailsComponent},
+      { path: 'news', component: NewsDisplayComponent },
+      { path: 'insurance-details', component: InsuranceDisplayComponent }
     ]
   }
 ];
