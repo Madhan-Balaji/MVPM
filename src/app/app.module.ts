@@ -29,6 +29,8 @@ import { CarDisplayComponent } from './car-display/car-display.component';
 import { LoanDetailsComponent } from './loan-details/loan-details.component';
 import { NewsDisplayComponent } from './news-display/news-display.component';
 import { InsuranceDisplayComponent } from './insurance-display/insurance-display.component';
+import { CompareComponent } from './compare/compare.component';
+import { CompareService } from './services/compare.service';
 
 
 
@@ -51,7 +53,8 @@ import { InsuranceDisplayComponent } from './insurance-display/insurance-display
     CarDisplayComponent,
     LoanDetailsComponent,
     NewsDisplayComponent,
-    InsuranceDisplayComponent
+    InsuranceDisplayComponent,
+    CompareComponent
   ],
   imports: [
     BrowserModule,
@@ -59,7 +62,7 @@ import { InsuranceDisplayComponent } from './insurance-display/insurance-display
     FormsModule,
     HttpClientModule
   ],
-  providers: [SessionManagerService, DataBridgeService, NewsService, InsuranceService, CarService, LoanService],
+  providers: [SessionManagerService, DataBridgeService, NewsService, InsuranceService, CarService, LoanService, CompareService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

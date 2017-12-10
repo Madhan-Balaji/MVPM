@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row" style="margin-bottom: 25px;">
     <div class="col-sm-12">
-      <img style="margin:auto; max-height:500px; max-width:600px;" src={{data.imageUrl}}>
+      <p style="text-align:center;"><img style="margin:auto; max-height:500px; max-width:600px;" src={{data.imageUrl}}></p>
     </div>
     <div class="row">
       <div class="col-sm-3"></div>
@@ -68,7 +68,7 @@
 
           </table>
 
-          <a (click)="seeLoans(data)">Check For Loans ></a>
+          <p style="text-align:center;"><a (click)="seeLoans(data)">Check For Loans ></a></p>
 
         </div>
       </div>
@@ -77,9 +77,9 @@
     <div class="row">
       <div class="col-sm-4"></div>
       <div class="col-sm-4">
-        <video *ngIf="data.usage == 'new'" controls="" autoplay="" style="margin:auto; max-height:500px; max-width:600px;" name="media">
+       <p style="text-align:center;"><video *ngIf="data.usage == 'new'" controls="" autoplay="" style="margin:auto; max-height:500px; max-width:600px;" name="media">
           <source src={{data.video}} type="video/mp4">
-        </video>
+        </video></p>
       </div>
       <div class="col-sm-4"></div>
     </div>

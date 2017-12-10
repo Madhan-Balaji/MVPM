@@ -18,6 +18,7 @@ import { CarDisplayComponent } from './car-display/car-display.component';
 import { LoanDetailsComponent } from './loan-details/loan-details.component';
 import { NewsDisplayComponent } from './news-display/news-display.component';
 import { InsuranceDisplayComponent } from './insurance-display/insurance-display.component';
+import { CompareComponent } from './compare/compare.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/signin', pathMatch: 'full' },
@@ -39,7 +40,8 @@ const routes: Routes = [
       { path: 'car-details', component: CarDisplayComponent},
       { path: 'loans', component: LoanDetailsComponent},
       { path: 'news', component: NewsDisplayComponent },
-      { path: 'insurance-details', component: InsuranceDisplayComponent }
+      { path: 'insurance-details', component: InsuranceDisplayComponent },
+      { path: 'compare', component: CompareComponent }
     ]
   }
 ];

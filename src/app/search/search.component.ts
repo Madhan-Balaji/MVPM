@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CarService } from '../services/car.service';
 import { DataBridgeService } from '../services/data-bridge.service';
 import { CarDetail } from '../models/car-detail';
+import { CompareService } from '../services/compare.service';
 
 @Component({
   selector: 'app-search',
@@ -22,7 +23,8 @@ export class SearchComponent implements OnInit {
   holder: CarDetail[] = [];
   constructor(
     private carService: CarService,
-    private dataBridge: DataBridgeService
+    private dataBridge: DataBridgeService,
+    private compareService: CompareService
   ) {
     this.used = false;
     this.newv = false;
@@ -206,4 +208,7 @@ export class SearchComponent implements OnInit {
     this.dataBridge.viewCarDetails(car);
   }
 
+  addCompare(car) {
+    this.compareService.setCompareCars(car);
+  }
 }
